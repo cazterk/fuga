@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 24911409}
   - component: {fileID: 24911408}
   - component: {fileID: 24911407}
-  - component: {fileID: 24911410}
   - component: {fileID: 24911411}
+  - component: {fileID: 24911410}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -206,7 +206,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.49, y: -2.48, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
+  m_Children:
+  - {fileID: 1101354457}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -222,7 +223,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea24df6ee0d3594ea7dcf3bb8c2f84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 15
+  jumpForce: 150
+  isGrounded: 0
+  groundCheck: {fileID: 1101354457}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!61 &24911408
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -230,13 +237,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24911404}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4f20941da5eb90542b5374deb4cd36db, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.54207796, y: 0.77125335}
+  m_Offset: {x: 0.013243794, y: 0.052373886}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -247,7 +254,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4499706, y: 1.001617}
+  m_Size: {x: 1.4130411, y: 1.5071373}
   m_EdgeRadius: 0
 --- !u!50 &24911409
 Rigidbody2D:
@@ -264,14 +271,14 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!70 &24911410
-CapsuleCollider2D:
+  m_Constraints: 4
+--- !u!58 &24911410
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -283,9 +290,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009074509, y: -0.55355096}
-  m_Size: {x: 1.3492509, y: 2.87151}
-  m_Direction: 0
+  m_Offset: {x: 0.06750667, y: -1.2965394}
+  serializedVersion: 2
+  m_Radius: 0.7004658
 --- !u!95 &24911411
 Animator:
   serializedVersion: 3
@@ -482,7 +489,7 @@ GameObject:
   - component: {fileID: 996939666}
   - component: {fileID: 996939665}
   - component: {fileID: 996939667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,6 +1720,36 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1101354456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1101354457}
+  m_Layer: 0
+  m_Name: groundcheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1101354457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101354456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 24911406}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211326177
 GameObject:
   m_ObjectHideFlags: 0
