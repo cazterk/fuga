@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     Rigidbody2D rb;
-    public float moveSpeed = 3f;
+    public float moveSpeed;
     public float jumpForce = 4f;
     private bool facingRight;
 
@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         facingRight = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        
     }
 
     //changes animation states
@@ -53,13 +54,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             buttonPressed = RIGHT;
-
-
+            
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            buttonPressed = LEFT;
-
+           
 
         }
 
@@ -83,20 +82,19 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
 
+        
 
         if (buttonPressed == RIGHT)
         {
-            rb.AddForce(new Vector2(  moveSpeed, 0));
-            changeAnimationState(PLAYER__RUN);
-            Debug.Log("right");
-           
-            
+            rb.AddForce(new Vector2(moveSpeed, 0));
+            Debug.Log(moveSpeed);
+
         }
         else if (buttonPressed == LEFT)
         {
-            rb.AddForce(new Vector2(-moveSpeed , 0));
-            Debug.Log("left");
-            changeAnimationState(PLAYER__RUN);
+            
+           
+         
             
 
         }
@@ -105,11 +103,14 @@ public class PlayerMovement : MonoBehaviour
             if(isGrounded)
             {
                 rb.AddForce(Vector2.up * jumpForce);
-                Debug.Log("jump");
                 changeAnimationState(PLAYER_JUMP);
             }
 
             
+        }
+        if(moveSpeed > 0)
+        {
+            changeAnimationState(PLAYER__RUN);
         }
         else
         {
