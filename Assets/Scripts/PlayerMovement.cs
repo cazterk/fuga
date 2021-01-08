@@ -6,9 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
 
     Rigidbody2D rb;
-    public float moveSpeed;
+    public float moveSpeed = 15f;
     public float jumpForce = 4f;
     private bool facingRight;
+    float movement;
 
     private Animator animator;
     private string currentState;
@@ -51,18 +52,33 @@ public class PlayerMovement : MonoBehaviour
     //Put non physics based movement in here
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        InputManager();
+
+    }
+
+
+
+    //Put physica based movement in here
+    private void FixedUpdate()
+    {
+        HandleMovenment();
+    }
+
+    private void InputManager()
+    {
+        movement = Input.GetAxis("Horizontal");
+       /** if (Input.GetKey(KeyCode.RightArrow))
         {
             buttonPressed = RIGHT;
-            
+
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-           
+            buttonPressed = LEFT;
 
-        }
+        }**/
 
-        else if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             buttonPressed = JUMP;
 
@@ -72,58 +88,39 @@ public class PlayerMovement : MonoBehaviour
         {
             buttonPressed = null;
         }
-
     }
 
-
-
-    //Put physica based movement in here
-    private void FixedUpdate()
+    private void HandleMovenment()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
 
-        
+        Vector2 move = new Vector2(movement * moveSpeed, rb.velocity.y);
+        rb.velocity = move;
 
-        if (buttonPressed == RIGHT)
+
+        if (buttonPressed == JUMP && isGrounded)
         {
-            rb.AddForce(new Vector2(moveSpeed, 0));
-            Debug.Log(moveSpeed);
-
-        }
-        else if (buttonPressed == LEFT)
-        {
-            
            
-         
-            
-
-        }
-        else if (buttonPressed == JUMP)
-        {
-            if(isGrounded)
-            {
                 rb.AddForce(Vector2.up * jumpForce);
                 changeAnimationState(PLAYER_JUMP);
-            }
-
             
+
         }
-        if(moveSpeed > 0)
+        else if (isGrounded)
         {
-            changeAnimationState(PLAYER__RUN);
-        }
-        else
-        {
-            changeAnimationState(PLAYER_IDLE);
+            if (movement != 0)
+            {
+                changeAnimationState(PLAYER__RUN);
+            }
+            else
+            {
+                changeAnimationState(PLAYER_IDLE);
+            }
         }
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        float horizontal = Input.GetAxis("Horizontal");
         Flip(horizontal);
-    }
 
-    private void HandleMovenment(float horizontal)
-    {
-       
     }
 
     private void Flip(float horizontal)
