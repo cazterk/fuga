@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - items
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: entity
     uniqueID: 1947994757
+    locked: 0
+  - name: items
+    uniqueID: 1018546689
     locked: 0
   - name: forerground
     uniqueID: 2428733611
