@@ -28,9 +28,9 @@ public class Enemy : MonoBehaviour
         {
             if(transform.position.x > leftCap)
             {
-              if(transform.localScale.x !=1)
+              if(transform.localScale.x != -1)
                 {
-                    transform.localScale = new Vector3(1, 1);
+                    transform.localScale = new Vector3(-1, 1);
                 }
                 transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
             }
@@ -43,9 +43,9 @@ public class Enemy : MonoBehaviour
         {
             if (transform.position.x < rightCap)
             {
-                if (transform.localScale.x != -1)
+                if (transform.localScale.x != 1)
                 {
-                    transform.localScale = new Vector3(-1, 1);
+                    transform.localScale = new Vector3(1, 1);
                 }
                 transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
             }
