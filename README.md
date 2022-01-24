@@ -8,5 +8,5 @@
 
 <img src="fuga_readme1.gif" alt="fuga_readme1"  width="600"  >
 
-**Authers**
+**Authors**
 - [cazterk](https://github.com/cazterk) - project owner -
