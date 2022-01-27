@@ -5,9 +5,7 @@ using UnityEngine;
 public class Robot : Enemy
 {
     public ProjectileBehaviour ProjectilePrefab;
-    public Transform LaunchOffset;
-
-    
+    public Transform LaunchOffset;    
     
     void Start()
     {

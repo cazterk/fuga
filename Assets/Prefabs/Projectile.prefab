@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8352643204208481900}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: TakeDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04263397fe66d644abd7ea45bde11265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 12
 --- !u!1 &9188206027673099617
 GameObject:
   m_ObjectHideFlags: 0
