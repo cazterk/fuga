@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 24911407}
   - component: {fileID: 24911411}
   - component: {fileID: 24911410}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &147365651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +348,9 @@ MonoBehaviour:
   leftCap: -0.31
   rightCap: 7
   moveSpeed: 3
+  player: {fileID: 0}
+  castPoint: {fileID: 0}
+  agroRange: 0
   ProjectilePrefab: {fileID: 0}
   LaunchOffset: {fileID: 0}
 --- !u!95 &147365652
@@ -2033,7 +2036,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 627621529}
-  - component: {fileID: 627621530}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2055,21 +2057,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &627621530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627621528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e9ff0291b75cd4b8c1d281f9088304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftCap: 0
-  rightCap: 0
-  moveSpeed: 3
 --- !u!1 &663338690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,7 +2107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &782864548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2136,6 +2123,9 @@ MonoBehaviour:
   leftCap: 4.7
   rightCap: 14
   moveSpeed: 3
+  player: {fileID: 0}
+  castPoint: {fileID: 0}
+  agroRange: 0
   ProjectilePrefab: {fileID: 0}
   LaunchOffset: {fileID: 0}
 --- !u!95 &782864549
@@ -2279,7 +2269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 839614198}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LaunchOffset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,7 +2284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839614197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.571, y: -0.253, z: 0}
+  m_LocalPosition: {x: 0.73, y: -0.253, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1120196275}
@@ -4772,7 +4762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1101354457}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: groundcheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4813,7 +4803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1104811826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4829,6 +4819,9 @@ MonoBehaviour:
   leftCap: -13
   rightCap: -6
   moveSpeed: 3
+  player: {fileID: 0}
+  castPoint: {fileID: 0}
+  agroRange: 0
   ProjectilePrefab: {fileID: 0}
   LaunchOffset: {fileID: 0}
 --- !u!95 &1104811827
@@ -4977,7 +4970,7 @@ GameObject:
   - component: {fileID: 1120196272}
   - component: {fileID: 1120196276}
   - component: {fileID: 1120196277}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5030,7 +5023,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1120196274
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5095,6 +5088,7 @@ Transform:
   m_Children:
   - {fileID: 1687547226}
   - {fileID: 839614198}
+  - {fileID: 1246207048}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5132,7 +5126,10 @@ MonoBehaviour:
   leftCap: -3
   rightCap: 9
   moveSpeed: 3
-  ProjectilePrefab: {fileID: 0}
+  player: {fileID: 24911406}
+  castPoint: {fileID: 1246207048}
+  agroRange: 4
+  ProjectilePrefab: {fileID: 8352643204208481900, guid: 008991f02a7700241aff36c8d948d8ae, type: 3}
   LaunchOffset: {fileID: 839614198}
 --- !u!1 &1211326177
 GameObject:
@@ -5255,6 +5252,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1246207047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1246207048}
+  m_Layer: 3
+  m_Name: CastPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1246207048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246207047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.559, y: -0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1120196275}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1424508058
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,7 +5373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687547226}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5741,7 +5768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1790786172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5757,6 +5784,9 @@ MonoBehaviour:
   leftCap: -11.65
   rightCap: -4
   moveSpeed: 3
+  player: {fileID: 0}
+  castPoint: {fileID: 0}
+  agroRange: 0
   ProjectilePrefab: {fileID: 0}
   LaunchOffset: {fileID: 0}
 --- !u!95 &1790786173

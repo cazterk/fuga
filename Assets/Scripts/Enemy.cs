@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
             castDist = -distance;
         }
 
-        Vector2 endPos = castPoint.position + Vector3.right* castDist;
+        Vector2 endPos = castPoint.position + Vector3.right * castDist;
         RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Action"));
          
          if(hit.collider != null)
@@ -101,9 +101,10 @@ public class Enemy : MonoBehaviour
     public void DistanceToPlayer()
     {
         float distToplayer = Vector2.Distance(transform.position, player.position);
-       /* Debug.Log("distToplayer :" + distToplayer)*/
+        Debug.Log("distToplayer :" + distToplayer);
 
 
-      
+
+
     }
 }
