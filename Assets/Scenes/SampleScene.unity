@@ -348,6 +348,8 @@ MonoBehaviour:
   leftCap: -0.31
   rightCap: 7
   moveSpeed: 3
+  ProjectilePrefab: {fileID: 0}
+  LaunchOffset: {fileID: 0}
 --- !u!95 &147365652
 Animator:
   serializedVersion: 3
@@ -2134,6 +2136,8 @@ MonoBehaviour:
   leftCap: 4.7
   rightCap: 14
   moveSpeed: 3
+  ProjectilePrefab: {fileID: 0}
+  LaunchOffset: {fileID: 0}
 --- !u!95 &782864549
 Animator:
   serializedVersion: 3
@@ -2265,6 +2269,36 @@ Transform:
   - {fileID: 1968319150}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &839614197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839614198}
+  m_Layer: 0
+  m_Name: LaunchOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &839614198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839614197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.571, y: -0.253, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1120196275}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &970502654
 GameObject:
@@ -4795,6 +4829,8 @@ MonoBehaviour:
   leftCap: -13
   rightCap: -6
   moveSpeed: 3
+  ProjectilePrefab: {fileID: 0}
+  LaunchOffset: {fileID: 0}
 --- !u!95 &1104811827
 Animator:
   serializedVersion: 3
@@ -5058,6 +5094,7 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 1687547226}
+  - {fileID: 839614198}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5095,6 +5132,8 @@ MonoBehaviour:
   leftCap: -3
   rightCap: 9
   moveSpeed: 3
+  ProjectilePrefab: {fileID: 0}
+  LaunchOffset: {fileID: 839614198}
 --- !u!1 &1211326177
 GameObject:
   m_ObjectHideFlags: 0
@@ -5718,6 +5757,8 @@ MonoBehaviour:
   leftCap: -11.65
   rightCap: -4
   moveSpeed: 3
+  ProjectilePrefab: {fileID: 0}
+  LaunchOffset: {fileID: 0}
 --- !u!95 &1790786173
 Animator:
   serializedVersion: 3

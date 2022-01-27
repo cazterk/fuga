@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Robot : Enemy
 {
-    // Start is called before the first frame update
+    public ProjectileBehaviour ProjectilePrefab;
+    public Transform LaunchOffset;
+
+    
+    
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Move();
-        
+        Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+
     }
 }
