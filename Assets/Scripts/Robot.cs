@@ -18,7 +18,13 @@ public class Robot : Enemy
     void Update()
     {
         Move();
-        Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+        DistanceToPlayer();
+
+        if (CanSeePlayer(agroRange))
+        {
+            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+
+        }
 
     }
 }
