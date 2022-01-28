@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float rightCap;
 
     private bool facingLeft = true;
-    public float moveSpeed = 3f;
+    public float moveSpeed = 1.0f;
 
     [SerializeField] Transform player;
     [SerializeField] Transform castPoint;
@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
     public void DistanceToPlayer()
     {
         float distToplayer = Vector2.Distance(transform.position, player.position);
-        Debug.Log("distToplayer :" + distToplayer);
+      /*  Debug.Log("distToplayer :" + distToplayer);*/
 
 
 

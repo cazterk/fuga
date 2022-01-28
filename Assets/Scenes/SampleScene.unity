@@ -5125,10 +5125,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftCap: -3
   rightCap: 9
-  moveSpeed: 3
+  moveSpeed: 1.5
   player: {fileID: 24911406}
   castPoint: {fileID: 1246207048}
-  agroRange: 4
+  agroRange: 8
   ProjectilePrefab: {fileID: 8352643204208481900, guid: 008991f02a7700241aff36c8d948d8ae, type: 3}
   LaunchOffset: {fileID: 839614198}
 --- !u!1 &1211326177

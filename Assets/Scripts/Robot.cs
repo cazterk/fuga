@@ -5,7 +5,8 @@ using UnityEngine;
 public class Robot : Enemy
 {
     public ProjectileBehaviour ProjectilePrefab;
-    public Transform LaunchOffset;    
+    public Transform LaunchOffset;   
+    
     
     void Start()
     {
@@ -17,13 +18,21 @@ public class Robot : Enemy
     {
         Move();
         DistanceToPlayer();
+        Shoot();
 
-        if (CanSeePlayer(agroRange))
+
+
+
+
+    }
+
+    void Shoot()
+    {
+        if (CanSeePlayer(agroRange) && ProjectilePrefab.timeWhenAllowedNextShoot <= Time.time )
         {
             Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
-
+            ProjectilePrefab.timeWhenAllowedNextShoot = Time.time + ProjectilePrefab.timeBetweenShooting;
+            Debug.Log("is firing");
         }
-        
-
     }
 }
