@@ -8,24 +8,31 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float leftCap;
     [SerializeField] private float rightCap;
 
-    private bool facingLeft = true;
+  
+
+    public bool facingLeft = true;
+    public bool facingRight = true;
     public float moveSpeed = 1.0f;
 
     [SerializeField] Transform player;
     [SerializeField] Transform castPoint;
     public float agroRange;
 
-    Rigidbody2D rb2d;
+    public enum State { Idle, Right, Left }
+    public State state = State.Idle;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+     
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        
        
     }
 
@@ -43,8 +50,13 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                facingLeft = false;
+
+                Right();
+               
+                
             }
+            state = State.Left;
+           
         }
         else
         {
@@ -58,8 +70,12 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                facingLeft = true;
+
+                Left();
+               
             }
+            state = State.Right;
+         
         }
     }
 
@@ -107,4 +123,18 @@ public class Enemy : MonoBehaviour
 
 
     }
+
+   public void Right()
+    {
+        facingRight = true;
+        facingLeft = false;
+
+     }
+
+    public void Left()
+    {
+        facingLeft = true;
+        facingRight = false;
+    }
+  
 }

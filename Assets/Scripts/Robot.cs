@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Robot : Enemy
+
 {
     public ProjectileBehaviour ProjectilePrefab;
-    public Transform LaunchOffset;   
-    
-    
+    public Transform LaunchOffset;
+
+    Collider2D coll;
+    Rigidbody2D rb2d;
+
+
     void Start()
     {
-
+        
     }
 
 
@@ -20,19 +24,24 @@ public class Robot : Enemy
         DistanceToPlayer();
         Shoot();
 
-
-
+       
 
 
     }
 
     void Shoot()
     {
-        if (CanSeePlayer(agroRange) && ProjectilePrefab.timeWhenAllowedNextShoot <= Time.time )
+        if (CanSeePlayer(agroRange) && ProjectilePrefab.timeWhenAllowedNextShoot <= Time.time)
         {
-            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            Instantiate(ProjectilePrefab, LaunchOffset.position, LaunchOffset.rotation);
             ProjectilePrefab.timeWhenAllowedNextShoot = Time.time + ProjectilePrefab.timeBetweenShooting;
-            Debug.Log("is firing");
+
+
+           
+
+
+
         }
     }
+
 }
