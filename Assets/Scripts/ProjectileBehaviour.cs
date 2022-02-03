@@ -13,6 +13,7 @@ public class ProjectileBehaviour : MonoBehaviour
 
     PlayerMovement target;
     Vector2 moveDirection;
+
     void Update()
     {
         rb = GetComponent<Rigidbody2D>();

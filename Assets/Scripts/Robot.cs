@@ -11,21 +11,16 @@ public class Robot : Enemy
     Collider2D coll;
     Rigidbody2D rb2d;
 
-
     void Start()
     {
         
     }
-
 
     void Update()
     {
         Move();
         DistanceToPlayer();
         Shoot();
-
-       
-
 
     }
 
