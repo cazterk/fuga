@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - TakeDamage
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Action
   - Water
   - UI
   - Ground
