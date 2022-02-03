@@ -167,6 +167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 2291687199094925144, guid: 26e175b084a640c4899ee76367c1f6d4, type: 3}
   speed: 3.5
-  timeWhenAllowedNextShoot: 0
+  timeWhenAllowedNextShoot: 112.539246
   timeBetweenShooting: 1
   rb: {fileID: 1409909070362391345}
