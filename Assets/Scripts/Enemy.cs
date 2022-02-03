@@ -117,11 +117,7 @@ public class Enemy : MonoBehaviour
     public void DistanceToPlayer()
     {
         float distToplayer = Vector2.Distance(transform.position, player.position);
-      /*  Debug.Log("distToplayer :" + distToplayer);*/
-
-
-
-
+    
     }
 
    public void Right()

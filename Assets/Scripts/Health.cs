@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            // we are dead
+            // player dead
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             changeAnimationState(PLAYER_DEAD);
         }

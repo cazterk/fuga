@@ -67,17 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private void InputManager()
     {
         movement = Input.GetAxis("Horizontal");
-       /** if (Input.GetKey(KeyCode.RightArrow))
-        {
-            buttonPressed = RIGHT;
-
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            buttonPressed = LEFT;
-
-        }**/
-
+      
         if (Input.GetKey(KeyCode.UpArrow))
         {
             buttonPressed = JUMP;
