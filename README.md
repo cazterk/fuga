@@ -1,5 +1,5 @@
 # fuga
-- Simple 2d game
+ just a simple 2d verical scoller game
 
 **Made With**
 - Uinty game engine
