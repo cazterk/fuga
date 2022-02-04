@@ -1,5 +1,5 @@
 # fuga
- just a simple 2d verical scoller game
+ just a simple 2d vertical scrolling platformer game
 
 **Made With**
 - Uinty game engine
