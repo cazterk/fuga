@@ -5,29 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public float maxHealth = 3;
-    public float currentHealth;
+    [SerializeField] Hearts _hearts;
+    [SerializeField] int damage;
     public Animator animator;
 
     const string PLAYER_DEAD = "player_dead";
     const string PLAYER_HIT = "player_hit";
     // Start is called before the first frame update
-    void Start()
-    {
-        currentHealth = maxHealth;
-    }
-
+    
     void changeAnimationState(string newState)
     {
         animator.Play(newState);
     }
 
-    void TakeDamage(int amount)
+    void TakeDamage()
     {
-        currentHealth -= amount;
+        _hearts.playerHealth = _hearts.playerHealth - damage;
+        _hearts.UpdateHealth();
+
         changeAnimationState(PLAYER_HIT);
 
-        if (currentHealth <= 0)
+        if (_hearts.playerHealth <= 0)
         {
             // player dead
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -36,9 +34,9 @@ public class Health : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "TakeDamage")
+        if (collision.gameObject.tag == "Enemy")
         {
-            TakeDamage(1);
+            TakeDamage();
 
             Debug.Log("player hit");
         }

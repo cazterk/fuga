@@ -5,24 +5,24 @@ using UnityEngine.UI;
 
 public class Hearts : MonoBehaviour
 {
-    public Health health;
+    
     public int playerHealth;
     [SerializeField] Image[] hearts;
   
 
     void Start()
     {
-        
+        UpdateHealth();
     }
 
     // Update is called once per frame
-    void UpdateHealth()
+    public void UpdateHealth()
     {
         for (int i = 0; i < hearts.Length; i++)
         {
             if (i < playerHealth)
             {
-                hearts[i].color = Color.red;
+                hearts[i].color = hearts[i].color;
             }
             else
             {

@@ -5359,6 +5359,31 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1302142488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3484278926351488484, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+  m_PrefabInstance: {fileID: 3484278926341262280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1302142490 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3484278926351488507, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+  m_PrefabInstance: {fileID: 3484278926341262280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1302142495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302142488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee67cf08995c3747bca00062c8510c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hearts: {fileID: 1813571463}
+  damage: 1
+  animator: {fileID: 1302142490}
 --- !u!1 &1330752908
 GameObject:
   m_ObjectHideFlags: 0
@@ -6187,9 +6212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 572f2863a1350e545ad57a8ebfa3fb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
-  playerHealth: 0
-  hearts: []
+  playerHealth: 3
+  hearts:
+  - {fileID: 303437145}
+  - {fileID: 802542888}
+  - {fileID: 1094315550}
 --- !u!1 &1922193566
 GameObject:
   m_ObjectHideFlags: 0
