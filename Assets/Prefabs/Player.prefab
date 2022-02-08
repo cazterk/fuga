@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3484278926351488507}
   - component: {fileID: 3484278926351488506}
   - component: {fileID: 6707746500960259766}
+  - component: {fileID: 2030316774883328522}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -205,6 +206,22 @@ MonoBehaviour:
   _hearts: {fileID: 0}
   damage: 1
   animator: {fileID: 3484278926351488507}
+--- !u!114 &2030316774883328522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484278926351488484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8781c1bad371445aa8861159c25f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
+  keyText: {fileID: 0}
+  diamondText: {fileID: 0}
+  rhombusText: {fileID: 0}
 --- !u!1 &3484278927421480464
 GameObject:
   m_ObjectHideFlags: 0
