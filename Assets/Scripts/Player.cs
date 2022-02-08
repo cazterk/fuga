@@ -24,11 +24,28 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Collectable"))
         {
             string itemType = collision.gameObject.GetComponent<Collectables>().itemType;
-            Debug.Log("we have collected a: "+ itemType);
+           
 
             inventory.Add(itemType);
             Debug.Log("inventory length is " + inventory.Count);
             Destroy(collision.gameObject);
+
+            if(itemType == "Key")
+            {
+                Debug.Log("we have collected a: " + itemType);
+            }
+            else if (itemType == "Diamond")
+            {
+                Debug.Log("we have collected a: " + itemType);
+            } else if(itemType == "BlueRhombus")
+            {
+                Debug.Log("we have collected a: " + itemType);
+            }
+            else if (itemType == "YellowRhombus")
+            {
+                Debug.Log("we have collected a: " + itemType);
+            }
         }
+
     }
 }
