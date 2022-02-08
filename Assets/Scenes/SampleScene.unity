@@ -4833,9 +4833,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: YellowRhombus
-  keyCount: 0
-  diamondCount: 0
-  rhombusCount: 0
 --- !u!1 &1094315548
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,9 +5169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: Key
-  keyCount: 0
-  diamondCount: 0
-  rhombusCount: 0
 --- !u!1 &1272315793
 GameObject:
   m_ObjectHideFlags: 0
@@ -5288,9 +5282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: BlueRhombus
-  keyCount: 0
-  diamondCount: 0
-  rhombusCount: 0
 --- !u!1 &1302142488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3484278926351488484, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
@@ -5309,6 +5300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
+  keyText: {fileID: 1373990055}
+  diamondText: {fileID: 1629545694}
+  rhombusText: {fileID: 1784246482}
 --- !u!1 &1330752908
 GameObject:
   m_ObjectHideFlags: 0
@@ -5387,7 +5381,7 @@ GameObject:
   - component: {fileID: 1373990056}
   - component: {fileID: 1373990055}
   m_Layer: 5
-  m_Name: TextKey
+  m_Name: KeyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5433,7 +5427,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 16092fab929db1b4e87d19f7dff776d3, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -5657,7 +5651,7 @@ GameObject:
   - component: {fileID: 1629545695}
   - component: {fileID: 1629545694}
   m_Layer: 5
-  m_Name: TextDiamond
+  m_Name: DiamondText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5703,7 +5697,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 16092fab929db1b4e87d19f7dff776d3, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -5837,9 +5831,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: Diamond
-  keyCount: 0
-  diamondCount: 0
-  rhombusCount: 0
 --- !u!1 &1710235758
 GameObject:
   m_ObjectHideFlags: 0
@@ -6206,7 +6197,7 @@ GameObject:
   - component: {fileID: 1784246483}
   - component: {fileID: 1784246482}
   m_Layer: 5
-  m_Name: TextRhombus
+  m_Name: RhombusText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6252,7 +6243,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 16092fab929db1b4e87d19f7dff776d3, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -6530,9 +6521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: BlueRhombus
-  keyCount: 0
-  diamondCount: 0
-  rhombusCount: 0
 --- !u!58 &2100180383
 CircleCollider2D:
   m_ObjectHideFlags: 0

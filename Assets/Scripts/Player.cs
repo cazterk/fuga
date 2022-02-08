@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class Player : MonoBehaviour
     private int keyCount = 0;
     private int diamondCount = 0;
     private int rhombusCount = 0;
+
+    [SerializeField] private Text keyText;
+    [SerializeField] private Text diamondText;
+    [SerializeField] private Text rhombusText;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,20 +43,30 @@ public class Player : MonoBehaviour
             if(itemType == "Key")
             {
                 keyCount++;
-                Debug.Log("we have collected a: " + itemType + " and count is " + keyCount );
+                keyText.text = keyCount.ToString();
+                Debug.Log("we have collected a: " + itemType + " and count is " + keyCount);
+
             }
+
             else if (itemType == "Diamond")
             {
                 diamondCount++;
+                diamondText.text = diamondCount.ToString();
                 Debug.Log("we have collected a: " + itemType + " and count is " + diamondCount);
-            } else if(itemType == "BlueRhombus")
+            } 
+
+            else if(itemType == "BlueRhombus")
             {
                 rhombusCount++;
+                rhombusText.text = rhombusCount.ToString();
                 Debug.Log("we have collected a: " + itemType + " and count is " + rhombusCount);
             }
+
             else if (itemType == "YellowRhombus")
             {
                 rhombusCount++;
+                rhombusText.text = rhombusCount.ToString();
+
                 Debug.Log("we have collected a: " + itemType + " and count is " + rhombusCount);
             }
         }
