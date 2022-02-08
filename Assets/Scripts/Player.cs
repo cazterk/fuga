@@ -5,6 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public List<string> inventory;
+    private int keyCount = 0;
+    private int diamondCount = 0;
+    private int rhombusCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,18 +35,22 @@ public class Player : MonoBehaviour
 
             if(itemType == "Key")
             {
-                Debug.Log("we have collected a: " + itemType);
+                keyCount++;
+                Debug.Log("we have collected a: " + itemType + " and count is " + keyCount );
             }
             else if (itemType == "Diamond")
             {
-                Debug.Log("we have collected a: " + itemType);
+                diamondCount++;
+                Debug.Log("we have collected a: " + itemType + " and count is " + diamondCount);
             } else if(itemType == "BlueRhombus")
             {
-                Debug.Log("we have collected a: " + itemType);
+                rhombusCount++;
+                Debug.Log("we have collected a: " + itemType + " and count is " + rhombusCount);
             }
             else if (itemType == "YellowRhombus")
             {
-                Debug.Log("we have collected a: " + itemType);
+                rhombusCount++;
+                Debug.Log("we have collected a: " + itemType + " and count is " + rhombusCount);
             }
         }
 
