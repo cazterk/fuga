@@ -14,6 +14,11 @@ public class ProjectileBehaviour : MonoBehaviour
     PlayerMovement target;
     Vector2 moveDirection;
 
+    void Start()
+    {
+        timeWhenAllowedNextShoot = 0f;    
+    }
+
     void Update()
     {
         rb = GetComponent<Rigidbody2D>();

@@ -30,11 +30,7 @@ public class Robot : Enemy
         {
             Instantiate(ProjectilePrefab, LaunchOffset.position, LaunchOffset.rotation);
             ProjectilePrefab.timeWhenAllowedNextShoot = Time.time + ProjectilePrefab.timeBetweenShooting;
-
-
-           
-
-
+                    
 
         }
     }
