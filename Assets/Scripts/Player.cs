@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Collectable"))
         {
             string itemType = collision.gameObject.GetComponent<Collectables>().itemType;
-           
+            AudioManager.PlaySound("collectable");
 
             inventory.Add(itemType);
             Debug.Log("inventory length is " + inventory.Count);

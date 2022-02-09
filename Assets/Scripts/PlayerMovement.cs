@@ -33,14 +33,13 @@ public class PlayerMovement : MonoBehaviour
 
     string buttonPressed;
 
-
     // Start is called before the first frame update
     void Start()
     {
         facingRight = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
+       
     }
 
     //changes animation states
@@ -72,7 +71,6 @@ public class PlayerMovement : MonoBehaviour
         {
             buttonPressed = JUMP;
 
-
         }
         else
         {
@@ -86,13 +84,14 @@ public class PlayerMovement : MonoBehaviour
         Vector2 move = new Vector2(movement * moveSpeed, rb.velocity.y);
         rb.velocity = move;
 
-
         if (buttonPressed == JUMP && isGrounded)
         {
            
                 rb.AddForce(Vector2.up * jumpForce);
                 changeAnimationState(PLAYER_JUMP);
-            
+                AudioManager.PlaySound("player_jump_hop");
+
+
 
         }
         else if (isGrounded)
@@ -100,6 +99,8 @@ public class PlayerMovement : MonoBehaviour
             if (movement != 0)
             {
                 changeAnimationState(PLAYER__RUN);
+                AudioManager.PlaySound("player_footstep");
+
             }
             else
             {
