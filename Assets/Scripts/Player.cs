@@ -70,4 +70,16 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public bool KeyCollect(bool keyCollected)
+    {
+        keyCollected = false;
+
+        if(keyCount > 0)
+        {
+            keyCollected = true;
+        }
+
+        return keyCollected;
+    }
 }
