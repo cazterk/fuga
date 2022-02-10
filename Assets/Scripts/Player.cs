@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Text diamondText;
     [SerializeField] private Text rhombusText;
 
-
-
     // Start is called before the first frame update
     void Start()
     {

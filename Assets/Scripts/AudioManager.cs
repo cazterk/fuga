@@ -31,9 +31,6 @@ public class AudioManager : MonoBehaviour
             case "shoot":
                 audioSource.PlayOneShot(shoot);
                 break;
-            case "player_footstep":
-                audioSource.PlayOneShot(player_footstep);
-                break;
             case "player_jump_hop":
                 audioSource.PlayOneShot(player_jump_hop);
                 break;
@@ -45,5 +42,14 @@ public class AudioManager : MonoBehaviour
                 break;
 
         }
+    }
+
+    public static void PlayAudio(ulong delay=100)
+    {
+
+        audioSource.clip = player_footstep;
+        audioSource.Play();
+       
+      
     }
 }
