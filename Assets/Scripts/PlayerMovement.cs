@@ -29,10 +29,9 @@ public class PlayerMovement : MonoBehaviour
     const string PLAYER_JUMP = "player_jump";
     const string PLAYER_DUCK = "player_duck";
 
-    
+    private AudioSource player_footstep;
 
     string buttonPressed;
-
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +39,8 @@ public class PlayerMovement : MonoBehaviour
         facingRight = true;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
+        player_footstep = GetComponent<AudioSource>();
+       
     }
 
     //changes animation states
@@ -72,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
         {
             buttonPressed = JUMP;
 
-
         }
         else
         {
@@ -86,13 +85,14 @@ public class PlayerMovement : MonoBehaviour
         Vector2 move = new Vector2(movement * moveSpeed, rb.velocity.y);
         rb.velocity = move;
 
-
         if (buttonPressed == JUMP && isGrounded)
         {
            
                 rb.AddForce(Vector2.up * jumpForce);
                 changeAnimationState(PLAYER_JUMP);
-            
+                AudioManager.PlaySound("player_jump_hop");
+
+
 
         }
         else if (isGrounded)
@@ -100,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
             if (movement != 0)
             {
                 changeAnimationState(PLAYER__RUN);
+                
+
             }
             else
             {
@@ -128,6 +130,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    private void Footstep()
+    {
+        player_footstep.Play();
+    }
 
 }

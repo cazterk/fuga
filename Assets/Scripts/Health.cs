@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
         _hearts.UpdateHealth();
 
         changeAnimationState(PLAYER_HIT);
+        AudioManager.PlaySound("player_hurt");
 
         if (_hearts.playerHealth <= 0)
         {

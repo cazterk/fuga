@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Text diamondText;
     [SerializeField] private Text rhombusText;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +32,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Collectable"))
         {
             string itemType = collision.gameObject.GetComponent<Collectables>().itemType;
-           
+            AudioManager.PlaySound("collectable");
 
             inventory.Add(itemType);
             Debug.Log("inventory length is " + inventory.Count);

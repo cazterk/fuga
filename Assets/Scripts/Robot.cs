@@ -13,7 +13,7 @@ public class Robot : Enemy
 
     void Start()
     {
-        
+        ProjectilePrefab.timeWhenAllowedNextShoot = 0f;
     }
 
     void Update()
@@ -30,7 +30,8 @@ public class Robot : Enemy
         {
             Instantiate(ProjectilePrefab, LaunchOffset.position, LaunchOffset.rotation);
             ProjectilePrefab.timeWhenAllowedNextShoot = Time.time + ProjectilePrefab.timeBetweenShooting;
-                    
+            AudioManager.PlaySound("shoot");
+
 
         }
     }

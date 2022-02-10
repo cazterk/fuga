@@ -16,15 +16,12 @@ public class ProjectileBehaviour : MonoBehaviour
 
     void Start()
     {
-        timeWhenAllowedNextShoot = 0f;    
+         
     }
 
     void Update()
     {
-        rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindObjectOfType<PlayerMovement>();
-        moveDirection = (target.transform.position - transform.position).normalized * speed;
-        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
+        Shoot();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,6 +29,13 @@ public class ProjectileBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void Shoot()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindObjectOfType<PlayerMovement>();
+        moveDirection = (target.transform.position - transform.position).normalized * speed;
+        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
+    }
 
 }
 
