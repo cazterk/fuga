@@ -4,7 +4,7 @@
 **Made With**
 - Uinty game engine
 - C#
-- Kenny assets [https://kenney.nl/]
+- Kenny assets [click to visit](https://kenney.nl/)
 
 <img src="fuga_readme1.gif" alt="fuga_readme1"  width="600"  >
 
