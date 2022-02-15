@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D finishLevel)
     {
-
+    
         var keyCollected = finishLevel.gameObject.GetComponent<Player>().KeyCollect(true);
 
         if ( keyCollected && finishLevel.CompareTag("Player"))
