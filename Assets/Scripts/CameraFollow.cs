@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
 
     [SerializeField] private Transform target;
+    [SerializeField] private Transform mover;
     [SerializeField] private Vector3 offset;
     [SerializeField] private float smoothSpeed = 0.125f;
     [SerializeField] [Range(0.01f, 1f)]
@@ -16,14 +17,18 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] float bottomLimit;
     [SerializeField] float topLimit;
 
+    private float movingSpeed = 10.0f;
+    private void Update()
+    {
+       ;
+
+    }
 
     private void LateUpdate()
     {
-        Vector3 desiredPosition = target.position + offset;
+        Vector3 desiredPosition =( (target.position + mover.position ) +  offset) * 0.5f;
         transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothSpeed);
-
-
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftLimt, rightLimt), Mathf.Clamp(transform.position.y, bottomLimit, topLimit), transform.position.z);
+         transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftLimt, rightLimt), Mathf.Clamp(transform.position.y, bottomLimit, topLimit), transform.position.z);
     
     }
      
