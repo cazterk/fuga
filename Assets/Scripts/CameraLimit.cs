@@ -7,6 +7,7 @@ public class CameraLimit : MonoBehaviour
     private Vector2 screenBounds;
     private float objectWidth;
     private float objectHeight;
+
     // Start is called before the first frame update
     void Start()
     {
