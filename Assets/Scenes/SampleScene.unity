@@ -3187,9 +3187,9 @@ MonoBehaviour:
   offset: {x: 0, y: 3, z: -1.5}
   smoothSpeed: 0.125
   velocity: {x: 0, y: 0, z: 0}
-  leftLimt: -5.17
-  rightLimt: 5.17
-  bottomLimit: -1
+  leftLimt: -4.96
+  rightLimt: 4.96
+  bottomLimit: 0.1
   topLimit: 34
 --- !u!20 &519420031
 Camera:
@@ -4732,7 +4732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &966450803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12442,6 +12442,10 @@ PrefabInstance:
     - target: {fileID: 3484278926351488484, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3484278926351488484, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3484278926351488486, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
       propertyPath: m_RootOrder
