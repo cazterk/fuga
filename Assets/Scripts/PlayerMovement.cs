@@ -18,10 +18,14 @@ public class PlayerMovement : MonoBehaviour
     public const string RIGHT = "right";
     public const string LEFT = "left";
     public const string JUMP = "jump";
+    public const string DOWN = "down";
 
     public bool isGrounded;
+    public bool CeilingIsHit;
+    public Transform ceilingCheck;
     public Transform groundCheck;
-    [SerializeField]private LayerMask groundLayer;
+    [SerializeField] LayerMask groundLayer;
+    [SerializeField] Collider2D disableDuckCollider;
 
     //animation states
     const string PLAYER_IDLE = "player_idle";
@@ -72,6 +76,10 @@ public class PlayerMovement : MonoBehaviour
         {
             buttonPressed = JUMP;
 
+        } 
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            buttonPressed = DOWN;
         }
         else
         {
@@ -85,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 move = new Vector2(movement * moveSpeed, rb.velocity.y);
         rb.velocity = move;
 
-        if (buttonPressed == JUMP && isGrounded)
+        if (buttonPressed == JUMP && isGrounded && CeilingIsHit == false)
         {
            
                 rb.AddForce(Vector2.up * jumpForce);
@@ -95,21 +103,43 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+        else if (buttonPressed == DOWN && isGrounded)
+        {
+           
+                disableDuckCollider.enabled = false;
+                changeAnimationState(PLAYER_DUCK);
+           
+        }
+
         else if (isGrounded)
         {
-            if (movement != 0)
+            if (movement != 0 && CeilingIsHit == false)
             {
                 changeAnimationState(PLAYER__RUN);
                 
+
+            }
+            else if (CeilingIsHit == true)
+            {
+                changeAnimationState(PLAYER_DUCK);
+                Debug.Log("ceiling hit!!!!!!!!!");
 
             }
             else
             {
                 changeAnimationState(PLAYER_IDLE);
             }
+        } else if (!CeilingIsHit)
+        {
+            disableDuckCollider.enabled = true;
+
         }
 
+
+
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        CeilingIsHit = Physics2D.OverlapCircle(ceilingCheck.position, 0.2f, groundLayer);
         float horizontal = Input.GetAxis("Horizontal");
         Flip(horizontal);
 
