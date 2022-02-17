@@ -8,6 +8,7 @@ TagManager:
   - GiveDamage
   - Collectable
   - Mover
+  - Stop
   layers:
   - Default
   - TransparentFX
