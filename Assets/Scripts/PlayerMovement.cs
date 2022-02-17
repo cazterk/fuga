@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public const string RIGHT = "right";
     public const string LEFT = "left";
     public const string JUMP = "jump";
+    public const string DOWN = "down";
 
     public bool isGrounded;
     public Transform groundCheck;
@@ -72,6 +73,10 @@ public class PlayerMovement : MonoBehaviour
         {
             buttonPressed = JUMP;
 
+        } 
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            buttonPressed = DOWN;
         }
         else
         {
@@ -95,6 +100,12 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
+        else if (buttonPressed == DOWN && isGrounded)
+        {
+            changeAnimationState(PLAYER_DUCK);
+            Debug.Log("duck duck duck duck");
+        }
+
         else if (isGrounded)
         {
             if (movement != 0)
@@ -107,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 changeAnimationState(PLAYER_IDLE);
             }
-        }
+        } 
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         float horizontal = Input.GetAxis("Horizontal");

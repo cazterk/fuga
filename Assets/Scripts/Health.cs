@@ -39,6 +39,22 @@ public class Health : MonoBehaviour
         {
             TakeDamage();
             Debug.Log("player hit");
+        } 
+       
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Mover"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            Debug.Log("dead dead dead dead");
         }
+    }
+
+    void Isdead()
+    {
+        _hearts.playerHealth = 0;
     }
 }
