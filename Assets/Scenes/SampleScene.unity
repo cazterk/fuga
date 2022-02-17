@@ -11133,6 +11133,11 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 3484278926351488504, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
   m_PrefabInstance: {fileID: 3484278926341262280}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1840613177 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6369322825827458149, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+  m_PrefabInstance: {fileID: 3484278926341262280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1855665901
 GameObject:
   m_ObjectHideFlags: 0
@@ -12495,6 +12500,14 @@ PrefabInstance:
       propertyPath: ceilingCheck
       value: 
       objectReference: {fileID: 1029055663}
+    - target: {fileID: 3484278926351488487, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+      propertyPath: player_footstep
+      value: 
+      objectReference: {fileID: 1840613177}
+    - target: {fileID: 3484278926351488487, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+      propertyPath: player_jump_hop
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3484278926351488487, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
       propertyPath: disableDuckCollider
       value: 
