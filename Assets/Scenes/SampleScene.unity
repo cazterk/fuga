@@ -4732,7 +4732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &966450803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7557,6 +7557,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: YellowRhombus
+--- !u!1 &1029055662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029055663}
+  m_Layer: 3
+  m_Name: ceilingCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1029055663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029055662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 24911406}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1093124651
 GameObject:
   m_ObjectHideFlags: 0
@@ -11098,6 +11128,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1840613174 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3484278926351488504, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+  m_PrefabInstance: {fileID: 3484278926341262280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1855665901
 GameObject:
   m_ObjectHideFlags: 0
@@ -12452,6 +12487,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3484278926351488487, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+      propertyPath: ceilingCheck
+      value: 
+      objectReference: {fileID: 1029055663}
+    - target: {fileID: 3484278926351488487, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
+      propertyPath: disableDuckCollider
+      value: 
+      objectReference: {fileID: 1840613174}
     - target: {fileID: 3484278926351488506, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
       propertyPath: m_Material
       value: 
