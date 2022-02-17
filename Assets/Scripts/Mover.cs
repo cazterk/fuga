@@ -18,6 +18,4 @@ public class Mover : MonoBehaviour
                 transform.Translate(Vector3.up * Time.deltaTime * speed);
 
     }
-
-   
 }
