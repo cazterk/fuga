@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     public float moveSpeed = 15f;
     public float jumpForce = 4f;
+    public float crouchForce = 1f;
     private bool facingRight;
     float movement;
 
@@ -105,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (buttonPressed == DOWN && isGrounded)
         {
-           
+                rb.AddForce(Vector2.down * crouchForce);  
                 disableDuckCollider.enabled = false;
                 changeAnimationState(PLAYER_DUCK);
            
