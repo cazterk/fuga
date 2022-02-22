@@ -3187,8 +3187,8 @@ MonoBehaviour:
   offset: {x: 0, y: 3, z: -1.5}
   smoothSpeed: 0.125
   velocity: {x: 0, y: 0, z: 0}
-  leftLimt: -4.96
-  rightLimt: 4.96
+  leftLimt: -6.75
+  rightLimt: 6.75
   bottomLimit: 0.1
   topLimit: 34
 --- !u!20 &519420031

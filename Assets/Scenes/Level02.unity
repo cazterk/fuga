@@ -4840,8 +4840,8 @@ MonoBehaviour:
   offset: {x: 0, y: 3, z: -1.5}
   smoothSpeed: 0.125
   velocity: {x: 0, y: 0, z: 0}
-  leftLimt: -4.96
-  rightLimt: 4.96
+  leftLimt: -6.75
+  rightLimt: 6.75
   bottomLimit: 0.1
   topLimit: 34
 --- !u!20 &519420031
@@ -17483,11 +17483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3484278926351488486, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.09
+      value: -13.04
       objectReference: {fileID: 0}
     - target: {fileID: 3484278926351488486, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.76
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 3484278926351488486, guid: 0ce778cb112b86e4a93e35335ea87972, type: 3}
       propertyPath: m_LocalPosition.z
