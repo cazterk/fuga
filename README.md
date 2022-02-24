@@ -12,7 +12,7 @@
 - [cazterk](https://github.com/cazterk) - dev/creator -
 
 **Status**
-- In development
+- Released
 
 **Expected Release**
 - 28 February 2022
