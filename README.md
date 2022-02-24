@@ -1,5 +1,7 @@
 # fuga
  just a simple 2d vertical scrolling platformer game
+ 
+ 🎮[CLICK HERE TO PLAY!!!](https://cazterk.itch.io/fuga)🎮
 
 **Made With**
 - Uinty game engine
